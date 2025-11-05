@@ -1,0 +1,79 @@
+# SEDE Configuration File
+
+# Application Settings
+app:
+  name: "SEDE"
+  version: "1.0.0"
+  debug: false
+  language: "fa"
+
+# Database Configuration
+database:
+  host: "localhost"
+  port: 5432
+  name: "sede_db"
+  user: "postgres"
+  password: ""
+
+# Redis Configuration
+redis:
+  host: "localhost"
+  port: 6379
+  db: 0
+
+# Chatbot Settings
+chatbot:
+  model_type: "hybrid"  # hybrid, llm, transformer
+  max_context_length: 2048
+  temperature: 0.7
+  confidence_threshold: 0.75
+  
+# NLP Models
+nlp:
+  intent_model: "parsbert-base"
+  entity_model: "parsbert-base"
+  language: "persian"
+  
+# Crawler Settings
+crawler:
+  concurrent_requests: 16
+  download_delay: 1.0
+  user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+  retry_times: 3
+  
+# Target Websites
+target_sites:
+  divar:
+    enabled: true
+    base_url: "https://divar.ir"
+    search_endpoint: "/s/tehran"
+    
+  sheypoor:
+    enabled: true
+    base_url: "https://www.sheypoor.com"
+    
+  bama:
+    enabled: true
+    base_url: "https://bama.ir"
+    
+  torob:
+    enabled: true
+    base_url: "https://torob.com"
+    
+  digikala:
+    enabled: true
+    base_url: "https://www.digikala.com"
+
+# API Settings
+api:
+  host: "0.0.0.0"
+  port: 8000
+  cors_origins: ["*"]
+  
+# Logging
+logging:
+  level: "INFO"
+  file: "logs/sede.log"
+  max_size: "10MB"
+  backup_count: 5
+
